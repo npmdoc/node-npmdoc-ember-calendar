@@ -1,0 +1,295 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/alphasights/ember-calendar#readme">ember-calendar (v0.3.9)</a>
+</h1>
+<h4>An awesome Ember calendar</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ember-calendar">module ember-calendar</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ember-calendar.included">
+            function <span class="apidocSignatureSpan">ember-calendar.</span>included
+            <span class="apidocSignatureSpan">(app)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ember-calendar.</span>index</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">ember-calendar.</span>name</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ember-calendar.index">module ember-calendar.index</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ember-calendar.index.included">
+            function <span class="apidocSignatureSpan">ember-calendar.index.</span>included
+            <span class="apidocSignatureSpan">(app)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">ember-calendar.index.</span>name</span>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ember-calendar" id="apidoc.module.ember-calendar">module ember-calendar</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ember-calendar.included" id="apidoc.element.ember-calendar.included">
+        function <span class="apidocSignatureSpan">ember-calendar.</span>included
+        <span class="apidocSignatureSpan">(app)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">included = function (app) {
+  this._super.included(app);
+
+  var options = app.options.emberCalendar || {};
+
+  if (!('includeFontAwesomeAssets' in options)) {
+    options.includeFontAwesomeAssets = true;
+  }
+
+  app.import(path.join(app.bowerDirectory, 'lodash/lodash.js'));
+  app.import(path.join(app.bowerDirectory, 'interact/interact.js'));
+
+  if (options.includeFontAwesomeAssets) {
+    app.import(path.join(app.bowerDirectory, 'fontawesome/fonts/fontawesome-webfont.ttf'), {
+      destDir: 'fonts'
+    });
+
+    app.import(path.join(app.bowerDirectory, 'fontawesome/fonts/fontawesome-webfont.woff'), {
+      destDir: 'fonts'
+    });
+
+    app.import(path.join(app.bowerDirectory, 'fontawesome/fonts/fontawesome-webfont.woff2'), {
+      destDir: 'fonts'
+    });
+
+    app.import(path.join(app.bowerDirectory, 'fontawesome/fonts/fontawesome-webfont.svg'), {
+      destDir: 'fonts'
+    });
+
+    app.import(path.join(app.bowerDirectory, 'fontawesome/fonts/fontawesome-webfont.eot'), {
+      destDir: 'fonts'
+    });
+  }
+
+  app.import('vendor/ember-calendar/lodash.js', {
+    type: 'vendor',
+    exports: { 'lodash': ['default'] }
+  });
+
+  app.import('vendor/ember-calendar/jstz.js', {
+    type: 'vendor',
+    exports: { 'jstz': ['default'] }
+  });
+
+  app.import('vendor/ember-calendar/interact.js', {
+    type: 'vendor',
+    exports: { 'interact': ['default'] }
+  });
+
+  app.import('vendor/jstz.js', {
+    type: 'vendor'
+  });
+
+  if (app.env === 'test') {
+    app.import(path.join(app.bowerDirectory, 'jquery-simulate/jquery.simulate.js'), {
+      type: 'test'
+    });
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var path = require('path');
+
+module.exports = {
+  name: 'ember-calendar',
+
+  included: function(app) {
+this._super.<span class="apidocCodeKeywordSpan">included</span>(app);
+
+var options = app.options.emberCalendar || {};
+
+if (!('includeFontAwesomeAssets' in options)) {
+  options.includeFontAwesomeAssets = true;
+}
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ember-calendar.index" id="apidoc.module.ember-calendar.index">module ember-calendar.index</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ember-calendar.index.included" id="apidoc.element.ember-calendar.index.included">
+        function <span class="apidocSignatureSpan">ember-calendar.index.</span>included
+        <span class="apidocSignatureSpan">(app)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">included = function (app) {
+  this._super.included(app);
+
+  var options = app.options.emberCalendar || {};
+
+  if (!('includeFontAwesomeAssets' in options)) {
+    options.includeFontAwesomeAssets = true;
+  }
+
+  app.import(path.join(app.bowerDirectory, 'lodash/lodash.js'));
+  app.import(path.join(app.bowerDirectory, 'interact/interact.js'));
+
+  if (options.includeFontAwesomeAssets) {
+    app.import(path.join(app.bowerDirectory, 'fontawesome/fonts/fontawesome-webfont.ttf'), {
+      destDir: 'fonts'
+    });
+
+    app.import(path.join(app.bowerDirectory, 'fontawesome/fonts/fontawesome-webfont.woff'), {
+      destDir: 'fonts'
+    });
+
+    app.import(path.join(app.bowerDirectory, 'fontawesome/fonts/fontawesome-webfont.woff2'), {
+      destDir: 'fonts'
+    });
+
+    app.import(path.join(app.bowerDirectory, 'fontawesome/fonts/fontawesome-webfont.svg'), {
+      destDir: 'fonts'
+    });
+
+    app.import(path.join(app.bowerDirectory, 'fontawesome/fonts/fontawesome-webfont.eot'), {
+      destDir: 'fonts'
+    });
+  }
+
+  app.import('vendor/ember-calendar/lodash.js', {
+    type: 'vendor',
+    exports: { 'lodash': ['default'] }
+  });
+
+  app.import('vendor/ember-calendar/jstz.js', {
+    type: 'vendor',
+    exports: { 'jstz': ['default'] }
+  });
+
+  app.import('vendor/ember-calendar/interact.js', {
+    type: 'vendor',
+    exports: { 'interact': ['default'] }
+  });
+
+  app.import('vendor/jstz.js', {
+    type: 'vendor'
+  });
+
+  if (app.env === 'test') {
+    app.import(path.join(app.bowerDirectory, 'jquery-simulate/jquery.simulate.js'), {
+      type: 'test'
+    });
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var path = require('path');
+
+module.exports = {
+  name: 'ember-calendar',
+
+  included: function(app) {
+this._super.<span class="apidocCodeKeywordSpan">included</span>(app);
+
+var options = app.options.emberCalendar || {};
+
+if (!('includeFontAwesomeAssets' in options)) {
+  options.includeFontAwesomeAssets = true;
+}
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
